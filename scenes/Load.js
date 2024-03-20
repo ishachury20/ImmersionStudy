@@ -40,6 +40,11 @@ class Load extends Phaser.Scene {
         this.load.image('g-ship', 'shipGreen_manned.png'); 
         this.load.image('y-ship', 'shipYellow_manned.png'); 
         this.load.image('arrowkey', 'Arrowkey.png'); 
+
+        this.load.audio('spacebackground', 'background.mp3'); 
+        this.load.audio('platformerbackground', 'arcademusic.mp3'); 
+        this.load.audio('click', 'click.wav'); 
+        this.load.audio('jump', 'jumping.wav'); 
     }
 
     create(){

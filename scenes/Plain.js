@@ -91,6 +91,7 @@ class Plain extends Phaser.Scene {
         this.physics.add.overlap(this.player, this.coin1, ()=>{
             this.coin1.anims.stop(); 
             this.done = true; 
+            //this.sound.play('click')
             if(this.done == true){
                 coincounter += 1; 
             }
@@ -129,6 +130,7 @@ class Plain extends Phaser.Scene {
             this.upkey.tint = 0xFACADE; 
             this.player.setVelocityY(-370)
             this.player.setVelocityX(0);     
+            //this.sound.play('jump', {volume: 0.3}); 
         } else {
             this.upkey.tint = 0xFFFFFF; 
         }

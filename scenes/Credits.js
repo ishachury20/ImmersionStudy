@@ -7,9 +7,10 @@ class Credit extends Phaser.Scene {
         this.cameras.main.setBackgroundColor('#242526');        
         this.add.sprite(0, 0, 'stars').setScale(2);   
 
-        this.planet1 = this.add.sprite(10, 350, 'planet3').setScale(0.3); 
-        this.planet2 = this.add.sprite(800, 500, 'planet2').setScale(0.2);  
-        this.planet3 = this.add.sprite(650, 10, 'planet1').setScale(0.25); 
+        this.planet1 = this.add.sprite(0, 350, 'planet3').setScale(0.3); 
+        this.station = this.physics.add.sprite(650, 500, 'station').setScale(0.8); 
+        //this.planet2 = this.add.sprite(650, 500, 'planet2').setScale(0.2);  
+        this.planet3 = this.add.sprite(800, 0, 'planet1').setScale(0.25); 
 
         this.alien2 = this.physics.add.sprite(150, 400, 'runningship').setScale(0.8); 
         this.alien2.rotation += 0.15; 
@@ -44,10 +45,23 @@ class Credit extends Phaser.Scene {
             duration: 2000
         }); 
 
-        this.text = this.add.text(190, 50, 'WELCOME BACK TRAVELER!', {align: 'center'}); 
+        this.text = this.add.text(230, 175, 'WELCOME BACK TRAVELER!', {align: 'center'}); 
         this.text.setFontFamily('Arial Black'); 
         this.text.setFontSize(27); 
 
+        this.text1 = this.add.text(208, 240, 'YOU SUCCESSFULLY MAKE IT TO THE STATION.', {align: 'center'}); 
+        this.text1.setFontFamily('Arial Black'); 
+        this.text1.setFontSize(18); 
+
+        this.text2 = this.add.text(208, 265, 'REPORT YOUR FINDINGS FROM YOUR TRAVELS.', {align: 'center'}); 
+        this.text2.setFontFamily('Arial Black'); 
+        this.text2.setFontSize(18); 
+
+        this.stars = this.add.tileSprite(10, 10, game.config.width, game.config.height, 'stars').setScale(1.75);  
         
     } 
+
+    update(){
+        this.stars.tilePositionX += 0.25;        
+    }
 } 

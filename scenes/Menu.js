@@ -6,6 +6,7 @@ class Menu extends Phaser.Scene {
     create(){
         this.cameras.main.setBackgroundColor('#242526');        
         this.add.sprite(0, 0, 'stars').setScale(2);   
+        
 
         this.planet1 = this.add.sprite(10, 350, 'planet3').setScale(0.3); 
         this.planet2 = this.add.sprite(800, 500, 'planet2').setScale(0.2);  
@@ -85,7 +86,10 @@ class Menu extends Phaser.Scene {
         button.setFontSize(25); 
         button.setTint(0xFBF4F7) 
         button.setInteractive(); 
-        button.on('pointerover', ()=> this.scene.start('plainScene'));
+        button.on('pointerover', ()=> 
+            this.scene.start('plainScene'),
+            
+        );
 
         const fx1 = button.postFX.addGlow(0xFACADE, 0, 0, false, 0.1, 14); 
         this.tweens.add({
